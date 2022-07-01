@@ -1,0 +1,108 @@
+package com.escola.escola;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.escola.escola.entities.AlunoRepository;
+import com.escola.escola.entities.CursoRepository;
+import com.escola.escola.entities.ProfessorRepository;
+import com.escola.escola.entities.TurmaRepository;
+import com.escola.escola.model.CAluno;
+import com.escola.escola.model.CCurso;
+import com.escola.escola.model.CProfessor;
+import com.escola.escola.model.CTurma;
+
+
+@SpringBootApplication
+public class EscolaApplication implements CommandLineRunner {
+	@Autowired
+	private AlunoRepository alunoRepository;
+	@Autowired
+	private CursoRepository cursoRepository;
+	@Autowired
+	private ProfessorRepository professorRepository;
+	@Autowired
+	private TurmaRepository turmaRepository;
+
+	public static void main(String[] args) {
+		SpringApplication.run(EscolaApplication.class, args);
+		
+		
+
+		
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		
+		List<CAluno> alunos = new ArrayList<>();
+		List<CTurma> turmas = new ArrayList<>();
+		
+		
+		CAluno aluno = new CAluno();
+		CAluno aluno2 = new CAluno();
+		CAluno aluno3 = new CAluno();
+		
+		
+		aluno.setNome("Rafael");
+		aluno.setEndereco("Rua Catorze");
+		aluno2.setNome("Bruna");
+		aluno2.setEndereco("Rua Treze");
+		aluno3.setNome("Maria");
+		aluno3.setEndereco("Rua Um");
+		
+		
+		CProfessor professor = new CProfessor();
+		professor.setNome("Ananias");
+		professor.setEndereço("Rua Trinta");
+		
+		CProfessor professor1 = new CProfessor();
+		professor.setNome("José");
+		professor.setEndereco("Rua Cinco");
+		
+
+		
+	
+		alunos.add(aluno);
+		alunos.add(aluno2);
+		alunos.add(aluno3);
+
+		
+		
+
+		
+
+		
+		CCurso curso = new CCurso();
+		curso.setNome("Spring Boot");
+		curso.setSigla("SB");
+		
+		CTurma turma1 = new CTurma();
+		turma1.setAno(2022);
+		turma1.setSemestre(2);
+		turma1.setProfessor(professor);
+		turma1.setCurso(curso);
+		turma1.setAlunos(alunos);
+		turmas.add(turma1);
+		
+
+		turmas.add(turma1);
+		
+		alunoRepository.saveAll(Arrays.asList(aluno, aluno2, aluno3));
+		professorRepository.save(professor);
+		professorRepository.save(professor1);
+		cursoRepository.save(curso);
+		turmaRepository.save(turma1);
+	
+	
+		
+		
+	}
+
+}

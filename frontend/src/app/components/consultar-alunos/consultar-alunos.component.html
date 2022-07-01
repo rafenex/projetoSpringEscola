@@ -1,0 +1,46 @@
+<h5>Consulta de alunos</h5>
+<p>Listagem de alunos Cadastrados</p>
+
+<table class="table table-hover table-sm table-bordered">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome do aluno</th>
+      <th>Endereço</th>
+
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let a of alunos">
+
+      <td>{{a.idAluno}}</td>
+      <td>{{a.nome}}</td>
+      <td>{{a.endereco}}</td>
+
+
+      <td>
+        <button class="btn btn-sm botaoeditar" [routerLink]="['/editar-alunos',a.idAluno]">Editar</button>
+        &nbsp;
+        <button class="btn btn-dark btn-sm" (click)="excluir(a.idAluno)">Excluir</button>
+
+      </td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan=" 6">Total de registros: {{alunos.length}}
+
+      </td>
+    </tr>
+    <!-- <tr>
+      <td colspan=" 6">
+        <button class="btn btn-dark btn-sm" (click)="relatorio()">Relatorio em PDF</button>
+      </td>
+
+    </tr> -->
+  </tfoot>
+</table>
+
+
+<a class="btn btn botaodevoltar" href="javascript:history.back()">Voltar</a>

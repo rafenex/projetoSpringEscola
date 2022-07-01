@@ -1,0 +1,44 @@
+<h5>Consulta de cursos</h5>
+<p>Listagem de cursos Cadastrados</p>
+
+<table class="table table-hover table-sm table-bordered">
+  <thead>
+    <tr>
+      <th>Nome do curso</th>
+      <th>Sigla</th>
+
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let a of cursos">
+
+      <td>{{a.nome}}</td>
+      <td>{{a.sigla}}</td>
+
+
+      <td>
+        <button class="btn btn-sm botaoeditar" [routerLink]="['/editar-cursos',a.idCurso]">Editar</button>
+        &nbsp;
+        <button class="btn btn-dark btn-sm" (click)="excluir(a.idCurso)">Excluir</button>
+
+      </td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan=" 6">Total de registros: {{cursos.length}}
+
+      </td>
+    </tr>
+    <!-- <tr>
+      <td colspan=" 6">
+        <button class="btn btn-dark btn-sm" (click)="relatorio()">Relatorio em PDF</button>
+      </td>
+
+    </tr> -->
+  </tfoot>
+</table>
+
+
+<a class="btn btn botaodevoltar" href="javascript:history.back()">Voltar</a>

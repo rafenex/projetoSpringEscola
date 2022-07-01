@@ -1,0 +1,5 @@
+package com.escola.escola.config.security;
+
+public class JwtConfiguration {
+
+}

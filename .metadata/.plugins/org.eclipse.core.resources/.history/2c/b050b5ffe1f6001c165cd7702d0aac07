@@ -1,0 +1,52 @@
+package com.escola.escola.form;
+
+import java.util.Optional;
+
+import com.escola.escola.entities.ProfessorRepository;
+import com.escola.escola.model.CProfessor;
+
+public class FormUpdateTurma {
+	
+	private Integer semestre;
+	private Integer ano;	
+	private CProfessor professor;
+	
+	private ProfessorRepository repository;
+
+	
+	public FormUpdateTurma() {
+	}	
+
+	public Optional<CProfessor> getProfessor(Long idProfessor) {
+		return repository.findById(idProfessor);
+	}
+
+	public void setProfessor(CProfessor professor) {
+		this.professor = professor;
+	}
+	
+	public Integer getSemestre() {
+		return semestre;
+	}
+	public void setSemestre(Integer semestre) {
+		this.semestre = semestre;
+	}
+	public Integer getAno() {
+		return ano;
+	}
+	public void setAno(Integer ano) {
+		this.ano = ano;
+	}
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+
+}

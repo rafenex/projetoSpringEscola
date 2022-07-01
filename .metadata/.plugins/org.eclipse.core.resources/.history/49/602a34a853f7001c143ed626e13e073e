@@ -1,0 +1,5 @@
+package com.escola.escola.repository;
+
+public interface UsuarioRepository {
+
+}

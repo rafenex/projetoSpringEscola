@@ -1,0 +1,43 @@
+<h5>Consulta de professores</h5>
+<p>Listagem de professores Cadastrados</p>
+
+<table class="table table-hover table-sm table-bordered">
+  <thead>
+    <tr>
+      <th>Nome do professor</th>
+      <th>Endereço</th>
+
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let a of professores">
+
+      <td>{{a.nome}}</td>
+      <td>{{a.endereco}}</td>
+
+
+      <td>
+        <button class="btn btn-sm botaoeditar" [routerLink]="['/editar-professores',a.idProfessor]">Editar</button>
+        &nbsp;
+        <button class="btn btn-dark btn-sm" (click)="excluir(a.idProfessor)">Excluir</button>
+
+      </td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan=" 6">Total de registros: {{professores.length}}
+
+      </td>
+    </tr>
+    <!-- <tr>
+      <td colspan=" 6">
+        <button class="btn btn-dark btn-sm" (click)="relatorio()">Relatorio em PDF</button>
+      </td>
+
+    </tr> -->
+  </tfoot>
+</table>
+
+<a class="btn btn botaodevoltar" href="javascript:history.back()">Voltar</a>

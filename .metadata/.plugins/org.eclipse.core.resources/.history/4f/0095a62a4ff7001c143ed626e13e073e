@@ -1,0 +1,59 @@
+package com.escola.escola.form;
+
+import com.escola.escola.model.CCurso;
+import com.escola.escola.model.CProfessor;
+
+public class FormCadastroTurma {
+	private Integer semestre;
+	private Integer ano;	
+	private CCurso curso;
+	private CProfessor professor;
+	
+	public FormCadastroTurma() {
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+	public CCurso getCurso() {
+		return curso;
+	}
+
+
+
+	public void setCurso(CCurso curso) {
+		this.curso = curso;
+	}
+
+
+
+	public CProfessor getProfessor() {
+		return professor;
+	}
+
+
+
+	public void setProfessor(CProfessor professor) {
+		this.professor = professor;
+	}
+
+
+
+	public Integer getSemestre() {
+		return semestre;
+	}
+
+	public void setSemestre(Integer semestre) {
+		this.semestre = semestre;
+	}
+
+	public Integer getAno() {
+		return ano;
+	}
+
+	public void setAno(Integer ano) {
+		this.ano = ano;
+	}
+	
+	
+}

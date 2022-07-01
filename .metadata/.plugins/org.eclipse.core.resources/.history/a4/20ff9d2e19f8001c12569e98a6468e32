@@ -1,0 +1,65 @@
+package com.escola.escola.form;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.escola.escola.model.CAluno;
+
+public class FormCadastroTurma {
+
+	private String semestre;
+	private String ano;
+	private String idProfessor;
+	private String idCurso;
+	private List<CAluno> alunos = new ArrayList<>();
+	
+	public FormCadastroTurma() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public String getSemestre() {
+		return semestre;
+	}
+
+	public void setSemestre(String semestre) {
+		this.semestre = semestre;
+	}
+
+	public String getAno() {
+		return ano;
+	}
+
+	public void setAno(String ano) {
+		this.ano = ano;
+	}
+
+	public String getIdProfessor() {
+		return idProfessor;
+	}
+
+	public void setIdProfessor(String idProfessor) {
+		this.idProfessor = idProfessor;
+	}
+
+	public String getIdCurso() {
+		return idCurso;
+	}
+
+	public void setIdCurso(String idCurso) {
+		this.idCurso = idCurso;
+	}
+
+	public List<CAluno> getAlunos() {
+		return alunos;
+	}
+
+	public void setAlunos(List<CAluno> alunos) {
+		this.alunos = alunos;
+	}
+	
+	
+
+	
+	
+	
+}

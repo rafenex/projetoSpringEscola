@@ -1,0 +1,63 @@
+<h5>Editar Turma</h5>
+<p>Preencha os campos para alterar os dados do turma.</p>
+<form [formGroup]="formEdicao" (ngSubmit)="(onSubmit())">
+  <div *ngIf="mensagem" class="mb-3 alert alert-dark">
+    <strong>{{mensagem}}</strong>
+  </div>
+  <input type="hidden" formControlName="idTurma" />
+
+  <div class="row mb-3">
+    <div class="class col-md-3">
+
+      <label>Semestre:</label>
+      <select class="form-select" formControlName="semestre">
+        <option value="1">Primeiro Semestre</option>
+        <option value="2">Segundo Semestre</option>
+      </select>
+    </div>
+
+    <div class="class col-md-3">
+      <label>Ano:</label>
+      <select class="form-select" formControlName="ano">
+        <option value="2022">2022</option>
+        <option value="2023">2023</option>
+        <option value="2024">2024</option>
+        <option value="2025">2025</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="class col-md-3">
+      <label>Professor:</label>
+      <select class="form-select" formControlName="idProfessor">
+        <option value="">Escolha um professor</option>
+        <option *ngFor="let p of professores" value="{{p.idProfessor}}">{{p.nome}}</option>
+      </select>
+    </div>
+    <div class="class col-md-3">
+      <label>Curso:</label>
+      <select class="form-select" formControlName="idCurso">
+        <option value="">Escolha um curso</option>
+        <option *ngFor="let c of cursos" value="{{c.idCurso}}">{{c.nome}}</option>
+      </select>
+    </div>
+  </div>
+
+
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <input type="submit" [disabled]="!formEdicao.valid" class="btn btn-dark" value="Editar" />
+      &nbsp;
+      <a class="btn btn botaodevoltar" href="javascript:history.back()">Voltar</a>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+</form>

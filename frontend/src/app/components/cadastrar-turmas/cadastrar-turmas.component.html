@@ -1,0 +1,80 @@
+<h5>Cadastrar Turma</h5>
+<p>Preencha os campos para incluir uma turma.</p>
+<form [formGroup]="formCadastro" (ngSubmit)="(onSubmit())">
+  <div *ngIf="mensagem" class="mb-3 alert alert-dark">
+    <strong>{{mensagem}}</strong>
+  </div>
+  <div class="row mb-3">
+    <div class="class col-md-3">
+
+      <label>Semestre:</label>
+      <select class="form-select" formControlName="semestre">
+        <option value="1">Primeiro Semestre</option>
+        <option value="2">Segundo Semestre</option>
+
+      </select>
+
+
+    </div>
+
+
+    <div class="class col-md-3">
+
+      <label>Ano:</label>
+      <select class="form-select" formControlName="ano">
+        <option value="2022">2022</option>
+        <option value="2023">2023</option>
+        <option value="2024">2024</option>
+        <option value="2025">2025</option>
+      </select>
+
+    </div>
+  </div>
+
+
+  <div class="row mb-3">
+    <div class="class col-md-3">
+      <label>Professor:</label>
+      <select class="form-select" formControlName="idProfessor">
+        <option value="">Escolha um professor</option>
+        <option *ngFor="let p of professores" value="{{p.idProfessor}}">{{p.nome}}</option>
+      </select>
+    </div>
+    <div class="class col-md-3">
+      <label>Curso:</label>
+      <select class="form-select" formControlName="idCurso">
+        <option value="">Escolha um curso</option>
+        <option *ngFor="let c of cursos" value="{{c.idCurso}}">{{c.nome}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="class col-md-3">
+      <label>Alunos:</label>
+      <select class="form-control" formControlName="alunos" #alunobd>
+        <option value="">Escolher Alunos</option>
+        <option *ngFor="let alunobd of alunosBd" value="{{alunobd.idAluno}}">{{alunobd.nome}}</option>
+      </select>
+    </div>
+
+    <div class="col-md-2 mt-4">
+      <input type="button" class="btn btn-sm botaoconsultar" (click)="adicionar()" value="Adicionar Aluno" />
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <input type="submit" [disabled]="!formCadastro.valid" class="btn btn-dark" value="Cadastrar" />
+      &nbsp;
+      <a class="btn btn botaoconsultar" href="javascript:history.back()">Voltar</a>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+</form>

@@ -1,0 +1,20 @@
+package com.escola.escola.form;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.escola.escola.model.CAluno;
+
+public class FormUpdateTurma {
+
+	private String semestre;
+	private String ano;
+	private String idProfessor;
+	private String idCurso;
+	private List<CAluno> alunos = new ArrayList<>();
+
+	
+	
+
+
+}

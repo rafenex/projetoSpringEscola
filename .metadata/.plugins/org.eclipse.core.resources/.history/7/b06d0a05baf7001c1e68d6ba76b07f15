@@ -1,0 +1,46 @@
+package com.escola.escola.form;
+
+public class FormCadastroTurma {
+	private String semestre;
+	private String ano;	
+	private String idCurso;
+	private String idProfessor;
+	
+	public FormCadastroTurma() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Long getIdCurso() {
+		return idCurso;
+	}
+
+	public void setIdCurso(Long idCurso) {
+		this.idCurso = idCurso;
+	}
+
+	public Long getIdProfessor() {
+		return idProfessor;
+	}
+
+	public void setIdProfessor(Long idProfessor) {
+		this.idProfessor = idProfessor;
+	}
+
+	public Integer getSemestre() {
+		return semestre;
+	}
+
+	public void setSemestre(Integer semestre) {
+		this.semestre = semestre;
+	}
+
+	public Integer getAno() {
+		return ano;
+	}
+
+	public void setAno(Integer ano) {
+		this.ano = ano;
+	}
+	
+	
+}

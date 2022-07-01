@@ -1,0 +1,5 @@
+package com.escola.escola.dto;
+
+public class CursoDTO {
+
+}

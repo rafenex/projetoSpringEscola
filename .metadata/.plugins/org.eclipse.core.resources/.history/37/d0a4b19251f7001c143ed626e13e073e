@@ -1,0 +1,5 @@
+package com.escola.escola.config;
+
+public class SecurityConfiguration {
+
+}

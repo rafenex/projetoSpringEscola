@@ -1,0 +1,7 @@
+package com.escola.escola.form;
+
+public class FormCadastroAluno {
+	private String nome;
+	private String endereco;
+
+}

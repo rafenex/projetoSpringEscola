@@ -1,0 +1,26 @@
+package com.escola.escola.dto;
+
+import java.util.List;
+
+import com.escola.escola.model.CAluno;
+
+public class AlunosTurmaDTO {
+	
+	private List<CAluno> alunos;
+	
+	public AlunosTurmaDTO() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public List<CAluno> getAlunos() {
+		return alunos;
+	}
+
+	public void setAlunos(List<CAluno> alunos) {
+		this.alunos = alunos;
+	}
+	
+	
+	
+
+}

@@ -1,0 +1,91 @@
+<h5>Consulta de turmas</h5>
+<p>Listagem de turmas Cadastrados</p>
+
+<div *ngIf="mensagem" class="mb-3 alert alert-dark">
+  <strong>{{mensagem}}</strong>
+</div>
+
+<table *ngFor="let t of turmas" class="table table-hover table-sm table-bordered col-md-12">
+
+  <thead>
+    <tr>
+      <th class="col-md-1">Número</th>
+      <th class="col-md-2">Professor</th>
+      <th class="col-md-2">Curso</th>
+      <th class="col-md-1">Ano</th>
+      <th class="col-md-1">Semestre</th>
+      <th class="col-md-2">Total de Alunos</th>
+      <th class="col-md-3">Ações</th>
+    </tr>
+
+  </thead>
+  <tbody>
+    <tr>
+      <td class="col-md-1">{{t.idTurma}}</td>
+      <td class="col-md-2">{{t.professor.nome}}</td>
+      <td class="col-md-2">{{t.curso.nome}}</td>
+      <td class="col-md-1">{{t.ano}}</td>
+      <td class="col-md-1">{{t.semestre}}</td>
+      <td class="col-md-2">{{t.alunos.length}}</td>
+      <td class="col-md-3">
+        <button class="btn btn-sm botaoeditar" [routerLink]="['/editar-turmas',t.idTurma]">Editar</button>
+        &nbsp;
+        <button class="btn btn-dark btn-sm" (click)="excluir(t.idTurma)">Excluir</button>
+
+
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="8">
+        <div class="row">
+          <div class="class col-md-2">
+            <input placeholder="Adicionar aluno" class="form-control" name="raAluno" id="raAluno" #raAluno>
+          </div>
+          <div class="class col-md-4 mt-1">
+            <button class="btn btn-sm btn-outline botaoadd" (click)="adicionarAluno(t.idTurma)">
+              <i class="fa fa-plus-square-o"></i>
+
+            </button>
+
+            &nbsp;
+            <button class="btn btn-sm btn-info" data-toggle="collapse" data-target="#listaDeAlunos"> <i
+                class="fa fa-list-ul"></i> Listar alunos da turma</button>
+
+          </div>
+        </div>
+
+      </td>
+    </tr>
+
+
+
+    <tr id="listaDeAlunos" class="collapse" *ngIf="t.alunos.length > 0">
+      <td colspan="8"><b>Alunos matriculados:</b> <br>
+        <span *ngFor="let a of t.alunos">
+          <button class="btn btn-sm btn-outline-dark" routerLink="/editar-alunos/{{a.idAluno}}"> <i
+              class="fa fa-pencil-square-o"></i></button> &nbsp;
+          <button class="btn btn-sm btn-outline-danger" (click)="excluirAluno(t.idTurma, a.idAluno)"> <i
+              class="fa fa-trash"></i></button> &nbsp;
+
+          {{a.idAluno}} &nbsp; - {{a.nome}} <br>
+        </span>
+      </td>
+    </tr>
+
+  </tbody>
+  <tfoot>
+  </tfoot>
+</table>
+
+<!-- https://stackoverflow.com/questions/35446955/how-to-go-back-last-page -->
+<!-- <back-button color="primary">ss</back-button> -->
+<a class="btn btn botaoeditar" href="javascript:history.back()">Voltar</a>
+
+
+<div class="accordion" id="accordionExample">
+
+
+
+
+</div>

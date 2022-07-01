@@ -1,0 +1,44 @@
+<h5>Editar Curso</h5>
+<p>Preencha os campos para alterar os dados do curso.</p>
+<form [formGroup]="formEdicao" (ngSubmit)="(onSubmit())">
+  <div *ngIf="mensagem" class="mb-3 alert alert-dark">
+    <strong>{{mensagem}}</strong>
+  </div>
+  <div class="row mb-3">
+    <div class="class col-md-12">
+      <label>Nome do Curso:</label>
+      <input type="text" class="form-control" formControlName="nome" />
+      <div class="text-danger" *ngIf="form.nome.touched && form.nome.invalid">
+        <span *ngIf="form.nome.errors.required">
+          <i class="fa fa-exclamation-circle"></i>
+          Por favor, digite o nome.
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="class col-md-12">
+      <label>Sigla:</label>
+      <input type="text" class="form-control" formControlName="sigla" />
+      <div class="text-danger" *ngIf="form.sigla.touched && form.sigla.invalid">
+        <span *ngIf="form.sigla.errors.required">
+          <i class="fa fa-exclamation-circle"></i>
+          Por favor, digite o sigla.
+        </span>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row mb-3">
+    <div class="col-md-2">
+      <input type="submit" [disabled]="!formEdicao.valid" class="btn btn-dark" value="Confirmar" />
+      &nbsp;
+      <a class="btn btn botaodevoltar" href="javascript:history.back()">Voltar</a>
+
+    </div>
+  </div>
+
+
+
+</form>

@@ -1,0 +1,13 @@
+package com.escola.escola.dto;
+
+import java.util.List;
+
+import com.escola.escola.model.CTurma;
+
+public class CursoDTO {
+	private Long idCurso;
+	private String nome;
+	private String sigla;
+	private List<CTurma> turmas;
+
+}
